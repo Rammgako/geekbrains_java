@@ -25,7 +25,7 @@ public class FirstLesson {
 
     public static void main(String[] args) {
 
-        computeExpression();
+        computeExpression(3.0f, 4.0f, 5.0f, 6.4f);
         checkSum(1, 7); //will return false
         numSign(-123);
         numSignBool(-45); //will return true
@@ -51,27 +51,12 @@ public class FirstLesson {
     /*3. Написать метод, вычисляющий выражение a * (b + (c / d)) и возвращающий результат,
     где a, b, c, d – аргументы этого метода, имеющие тип float.*/
 
-    public static float computeExpression() {
-        float a, b, c, d, result;
-        Scanner variable_input = new Scanner(System.in);
-        System.out.println("Input values for variables a, b, c and d.");
-        System.out.println("Input variable a =:");
-        a = variable_input.nextFloat();
-
-        System.out.println("Input variable b =:");
-        b = variable_input.nextFloat();
-
-        System.out.println("Input variable c =:");
-        c = variable_input.nextFloat();
-
-        System.out.println("Input variable d =:");
-        d = variable_input.nextFloat();
-
+    public static float computeExpression(float a, float b, float c, float d) {
+        float result;
         result = a * (b + (c / d));
-        System.out.println(result);
+        System.out.printf("The result of this math expression is %f\n", result);
 
         return result;
-
     }
 
 
