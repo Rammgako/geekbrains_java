@@ -11,17 +11,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Cat[] cats = {
-                new Cat("Barsik1", 35),
-                new Cat("Barsik2", 25),
-                new Cat("Barsik3", 18),
-                new Cat("Barsik4", 28),
-                new Cat("Barsik5", 13),
+        Cat1[] cats = {
+                new Cat1("Barsik1", 35),
+                new Cat1("Barsik2", 25),
+                new Cat1("Barsik3", 18),
+                new Cat1("Barsik4", 28),
+                new Cat1("Barsik5", 13),
         };
 
         Plate plate = new Plate(150);
 
-        for (Cat cat : cats
+        for (Cat1 cat : cats
         ) {
             cat.eat(plate);
             cat.catState();
