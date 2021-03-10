@@ -1,28 +1,33 @@
-public class Cat extends Animal{
-    private static int count = 0;
+public class Cat {
 
-    public static int getCount() {
-        return count;
+    private String name;
+    private int hunger;
+
+    public Cat(String name, int hunger) {
+        this.name = name;
+        this.hunger = hunger;
     }
 
-    public Cat(String animalName) {
-        super(animalName);
-        count++;
-    }
-
-
-    @Override
-    public void runMethod(int distance) {
-        if (distance <= 200){
-            super.runMethod(distance);
-        }else {
-            System.out.println(animalName + " cannot run that far, cats can only run 200m distance");
+    public int eat(Plate plate) {
+        if (hunger > plate.getFoodAmount(hunger)){
+            System.out.println("There is not enough food! Please add food into the plate.\n");
+            plate.setFoodAmount(hunger);
         }
+        else {
+            int newfoodamount = plate.getFoodAmount(hunger) - hunger;
+            plate.setFoodAmount(newfoodamount);
+            System.out.println("Cat " + this.name + " ate " + hunger + " food and not hungry anymore.\n");
+            System.out.println("There is " + newfoodamount + " of food left on this plate.\n");
+            hunger = 0;
+        }
+        return hunger;
     }
 
-    @Override
-    public void swimMethod(int distance) {
-        System.out.println("Cats can not swim");
+    public void catState(){
+        if (hunger > 0 ) {
+            System.out.println("Cat " + this.name + " is hungry. Add food into the plate and feed the cat!\n");
+        }else
+            System.out.println("Cat " + this.name + " is full.\n");
     }
 
 }
